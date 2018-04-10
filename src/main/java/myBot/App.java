@@ -54,6 +54,8 @@ public class App extends ListenerAdapter {
 			channel.sendMessage("Welcome to Discord!").queue();
 		}else if (msg.equalsIgnoreCase("good morning")) {
 			channel.sendMessage("Good morning! Did you sleep well?").queue();
+		}else if (msg.contains("good")||msg.contains("Good")) {
+			channel.sendMessage("yay!").queue();
 		}else {
 			channel.sendMessage("ack " + msg).queue();
 		}
