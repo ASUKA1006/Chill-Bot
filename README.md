@@ -1,16 +1,17 @@
 # Chill-Bot
-Bot for Discord. This is a __first version__ now.
+Bot for Discord. From first version to second version.
 README is in English and Japanese.
 
 ## Description
-This bot can reply to your text with simple words on the private chat of Discord( I didn't use API to have more serious conversation). 
+This bot can reply to your text with simple words on the private chat of Discord( I didn't use API to have more serious conversation).
+And it's going to send you some information on the private chat.
 
 I often use Discord apprication to text, share photos and talk. 
 It seemed to be fun if I can share imformation (ex. weather, time) to the member of my server and also talk in the private chat.
 That's why I started to make it.  
 
 
-__For version 2:__ I'll let bot to send imformation to the group chat. 
+__For version 3 :__ Take advantage of the group chat. 
 
 
 ## Environment and Library
@@ -32,6 +33,7 @@ __For version 2:__ I'll let bot to send imformation to the group chat.
 
 #### Note:
 You can make the bot online status and get reply only while you're running the program.
+I'm going to update code and ReadMe soon for second version.
 
 ------------------------------------------------------------------------------------
 
@@ -39,9 +41,9 @@ You can make the bot online status and get reply only while you're running the p
 最近日本でも知名度があがった(?) DiscordでBOTを作ってみました。
 私はグループでも個人でもチャットしたり、写真や気になるリンクを共有したりするのにDiscordを使うことがよくあるので、
 Discordを開くだけで天気や時刻のような情報を素早く確認できて、話しかけたら返事してくれるBOTがあったらもっと便利だなと思ってプログラミングしました。  
-現在はバージョン1ということで、BOTとの個人チャットで何か話しかけると返事が返ってきます。
+バージョン1から2にかけては、BOTとの個人チャットで何か話しかけると返事が返ってくる機能に加え、botなのでちょっとした情報を流してくれるようにします。
 
-__バージョン2に向けて:__ グループチャット上で上記したような情報が送られるようにします。
+__バージョン3に向けて:__ グループチャットを利用する。
 
 ## 開発環境とライブラリ
 * メイブン  
@@ -62,7 +64,7 @@ __バージョン2に向けて:__ グループチャット上で上記したよ�
 
 #### 注釈：
 返事をもらうには、プログラムを実行したままDiscordを使用してください。
-
+中のコードとReadMeを近日更新します。
 
 
 
