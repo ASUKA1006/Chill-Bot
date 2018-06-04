@@ -1,5 +1,5 @@
-# Chill-Bot
-Bot for Discord. From first version to second version.
+# Discord bot (named Chill-Bot)
+Bot for Discord. Second version now.
 README is in English and Japanese.
 
 ## Description
