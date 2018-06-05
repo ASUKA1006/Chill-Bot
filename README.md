@@ -27,7 +27,7 @@ __For version 3 :__ Take advantage of the group chat. I want to upgrade this mor
 
 
 ## Usage
-1. Copy the code and paste it on your IDE.  
+1. Clone it.  
 2. You should get your token and make an account for bot( cf.  https://github.com/reactiflux/discord-irc/wiki/Creating-a-discord-bot-&-getting-a-token)  
 3. Replace "token" in the program to token that you got  
 4. Implement the program  
@@ -58,7 +58,7 @@ __バージョン3に向けて:__ グループチャットを利用する。色�
 * アクセスキー　(今回はcurrencylayerを使用）
 
 ## 使い方
-1．コードをIDEにコピペする。  
+1．cloneします。  
 2．トークンとBOTのアカウントを取得(参照：　https://github.com/reactiflux/discord-irc/wiki/Creating-a-discord-bot-&-getting-a-token）  
 3．コード上の"token"の部分、""の中に取得したトークンを入れる。  
 4．プログラムを実行。  
