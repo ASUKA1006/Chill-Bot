@@ -1,6 +1,7 @@
 package myBot;
 
 import java.io.IOException;
+import java.util.Date;
 
 import org.apache.http.HttpEntity;
 import org.apache.http.client.ClientProtocolException;
@@ -37,15 +38,17 @@ public class Exchange {
 		// access the web site
 		// send a request to it
 		HttpGet get = new HttpGet(BaseURL + endpoint +"?access_key=" + AccessKey);
+		Date date = new Date();
 		 
 		if (msg.contains("rate")|| msg.contains("Exchange")) {
+			
 			try 
 			{
 				CloseableHttpResponse response = httpClient.execute(get);
 				HttpEntity entity = response.getEntity();
 				JSONObject exchangeRates = new JSONObject(EntityUtils.toString(entity));
 				
-				channel.sendMessage("Currency Exchange Rates Today").queue();
+				channel.sendMessage("Currency Exchange Rates Today : " + date.toString()).queue();
 				channel.sendMessage("1 " + exchangeRates.getString("source") + " in CAD : " + exchangeRates.getJSONObject("quotes").getDouble("USDCAD")).queue();
 				response.close();
 			}

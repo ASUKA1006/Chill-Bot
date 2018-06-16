@@ -30,6 +30,8 @@ public class App {
 		JDA jda = builder.buildBlocking();
 		User asuka = jda.getUserById(root.getLong("userId"));
 		asuka.openPrivateChannel();
+		
+		
 
 	}
 
