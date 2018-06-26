@@ -13,7 +13,9 @@ import org.apache.http.util.EntityUtils;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import net.dv8tion.jda.core.entities.MessageChannel;
+import net.dv8tion.jda.core.entities.ChannelType;
+import net.dv8tion.jda.core.entities.TextChannel;
+import net.dv8tion.jda.core.events.message.MessageReceivedEvent;
 
 public class Exchange {
 	JSONObject root;
@@ -29,7 +31,7 @@ public class Exchange {
 	}
 	
 	
-	public void showRates(String msg, MessageChannel channel) throws ClientProtocolException, IOException {
+	public void showRates(String msg, MessageReceivedEvent event) throws ClientProtocolException, IOException {
 		//API
 		// get the response from there
 		
@@ -38,35 +40,43 @@ public class Exchange {
 		// access the web site
 		// send a request to it
 		HttpGet get = new HttpGet(BaseURL + endpoint +"?access_key=" + AccessKey);
+		
 		Date date = new Date();
-		 
-		if (msg.contains("rate")|| msg.contains("Exchange")) {
-			
-			try 
-			{
-				CloseableHttpResponse response = httpClient.execute(get);
-				HttpEntity entity = response.getEntity();
-				JSONObject exchangeRates = new JSONObject(EntityUtils.toString(entity));
+		TextChannel textChannel = event.getTextChannel();
+		
+		//Note, if you want to use a few channel type and don't check it before using a specific channel,
+		//this might return null pointer exception
+		if (event.isFromType(ChannelType.TEXT)) 
+		{
+			if (msg.contains("rate")||msg.equalsIgnoreCase("rate")) {
 				
-				channel.sendMessage("Currency Exchange Rates Today : " + date.toString()).queue();
-				channel.sendMessage("1 " + exchangeRates.getString("source") + " in CAD : " + exchangeRates.getJSONObject("quotes").getDouble("USDCAD")).queue();
-				response.close();
+				try 
+				{
+					CloseableHttpResponse response = httpClient.execute(get);
+					HttpEntity entity = response.getEntity();
+					JSONObject exchangeRates = new JSONObject(EntityUtils.toString(entity));
+					
+					textChannel.sendMessage("Currency Exchange Rates Today \n").queue();
+					textChannel.sendMessage(": " + date.toString() + "\n").queue();
+					textChannel.sendMessage("1 " + exchangeRates.getString("source") + " in CAD : " + exchangeRates.getJSONObject("quotes").getDouble("USDCAD")).queue();
+					response.close();
+				}
+				catch(ClientProtocolException e) 
+				{
+					System.out.println(e.getMessage());
+				}
+				catch(IOException e) 
+				{
+					System.out.println(e.getMessage());
+				}
+				catch(JSONException e)
+				{
+					System.out.println(e.getMessage());
+				}
 			}
-			catch(ClientProtocolException e) 
-			{
-				System.out.println(e.getMessage());
+			else {
+				
 			}
-			catch(IOException e) 
-			{
-				System.out.println(e.getMessage());
-			}
-			catch(JSONException e)
-			{
-				System.out.println(e.getMessage());
-			}
-		}
-		else {
-			
 		}
 	}
 

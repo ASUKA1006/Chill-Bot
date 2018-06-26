@@ -23,13 +23,15 @@ public class Messages extends ListenerAdapter{
 		Message message = event.getMessage();		
 		String msg = message.getContentDisplay();
 		User author = event.getAuthor();
+		
+		//this is useful to determine the user sending messages is person or BOT
 		boolean bot = author.isBot();
 		
 		if(bot) {
 			return;
 		}
 		try {
-			this.exchange.showRates(msg, channel);
+			exchange.showRates(msg, event);
 		} catch (ClientProtocolException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -46,6 +48,8 @@ public class Messages extends ListenerAdapter{
 			channel.sendMessage("Good morning! Did you sleep well?").queue();
 		}else if (msg.contains("good")||msg.contains("Good")) {
 			channel.sendMessage("yay!").queue();
+		}else if (msg.equalsIgnoreCase("rate")|| msg.contains("rate")) {
+			channel.sendMessage("I'll show you it on TEXT CHANNELS").queue();
 		}else if (!msg.contains("rate")) {
 			channel.sendMessage("ack " + msg).queue();
 		}
