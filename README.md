@@ -10,7 +10,7 @@ It will be the better if we can use discord not only as a tool for just communic
 This bot gets imformation of currency exchange rate, and you do change the type of currency to one which you want to know rate for.
 Why don't you use this when you travel to the other countries.  
 
-__By version 3 :__ simple talk >> get currency exchange rate >> activate group chat
+__By version 3 :__ simple talk >> get currency exchange rate >> get the information of exchange rate in group chat  
 __For version 4 :__ more functions
 
 
@@ -43,8 +43,8 @@ You can make the bot online status and get reply only while you're running the p
 Discordをコミュニケーションや何かをシェアするだけに使うのではなく、（例えば天気や時刻のような）便利な情報を素早く確認できるユーティリティツールとしても使えたらいいなと思ってプログラミングしました。  
 現在は、BOTとの個人チャットで何か話しかけると返事が返ってくる機能に加え、今日の外貨の換算レートを教えてくれるようにしました。どこの通貨のレートにするかは、変更が可能です。
 
-__バージョン3まで:__　簡単な会話　>> 為替レートの取得　>> グループチャトを使えるようにする
-__バージョン4に向けて:__ グループチャットを利用する。色々アップグレードする。
+__バージョン3まで:__　簡単な会話（＠個人チャット）　>> 為替レートの取得　>> レート情報をグループチャットで受け取れる。
+__バージョン4に向けて:__ 色々アップグレードする。
 
 ## 開発環境とライブラリ
 * メイブン  
